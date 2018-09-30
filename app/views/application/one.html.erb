@@ -1,0 +1,52 @@
+<h1>Turbolinks Scroll Position Bug</h1>
+
+<p>When a Turbolinks page becomes "invalid" i.e. its tracked assets change or the <code>turbolinks-visit-control</code> directive is "reload", Turbolinks triggers a full page reload. Unfortunately this can result in an odd experience when navigating between scrollable pages—a user transitions to a new page but is returned to the scroll position of the previous page. This is becuase browsers cache the scroll position and restore it when a page is reloaded via <code>window.location.reload</code>.</p>
+
+<p>To reproduce this:</p>
+
+<ol>
+  <li>Scroll down</li>
+  <li>Click the "Page Two" link (this loads a page with the <code>turbolinks-visit-control … reload</code> directive)</li>
+  <li>Observe that the scroll position is towards the bottom</li>
+</ol>
+
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+<p>Page one</p>
+
+<%= link_to 'Page Two', two_path %>
